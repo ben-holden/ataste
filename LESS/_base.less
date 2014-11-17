@@ -1,0 +1,202 @@
+body {
+	font-family: @body-text;
+	font-weight: 100;
+	letter-spacing: 0.0625em;
+	background: @body-background;
+	color: @text-colour;
+}
+
+h1, h2, h3, h4 {
+	font-family: @header-text;
+	color: @header-text-colour;
+	text-align: center;
+	a {
+		color: @header-text-colour;
+		border: none;
+	}
+}
+
+h1 {
+  font-size: 2.074em;
+}
+
+h2 {font-size: 1.728em;}
+
+h3 {font-size: 1.44em;}
+
+h4 {font-size: 1.2em;}
+
+.site-branding {
+	padding: 2em 0;
+	background: @coffee;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 0.3125em solid @ribbon;
+	h2 {
+		color: @ribbon;
+	}
+
+	h3 {
+		padding: 1em 0;
+		color: @ribbon;
+		font-size: 0.75em;
+		line-height: 2.5;
+		span {
+			color: @cheese;
+			font-size: 1.728rem;
+			margin: 0 1em;
+		}
+	}
+
+	a:link, a:visited {
+		text-decoration: none;
+		color: @header-text-colour;
+		border: none;
+	}
+}
+
+p {
+	padding-bottom: 2em;
+	line-height: 2;
+	font-size: 1.5em;
+}
+
+a:link, a:visited {
+	color: @link-colour;
+	border-bottom: 2px solid @link-colour;
+	text-decoration: none;
+}
+
+#home-page {
+	background: @coffee;
+	border-bottom: 0.3125em solid darken(@cheese, 10%);
+	header {
+		display: none;
+	}
+
+	.entry-content {
+		margin: 0;
+		padding-bottom: 1em;
+		h1 {
+			margin: 1em;
+			line-height: 1.75;
+			font-weight: 100;
+			letter-spacing: 0.030135005em;
+		}
+
+		#photo-rob, #mouthwatering-creations {
+			p {
+				max-width: 100%;
+				padding: 0 1em;
+				img.alignnone {
+					width: 100%;
+					margin: 0 auto;
+					border-bottom: 0.3125em solid @ribbon;
+				}
+
+				img.alignright {
+					border: 0.3125em solid @white;
+					margin: 0 1em;
+				}
+			}
+		}
+		
+	}
+
+	blockquote {
+		color: @cheese;
+	}
+}
+
+#robs-friends, #order-yours-today {
+	h1 {
+		color: @fruitcake;
+	}
+	color: @fruitcake;
+	border-bottom: 0.3125em solid darken(@cheese, 10%);
+	margin: 0;
+}
+
+#whats-in-the-box {
+	background: @coffee;
+	border-bottom: 0.3125em solid @ribbon;
+	ul {
+		li {
+			strong {
+				font-weight: 900;
+				color: @ribbon;
+			}
+		}
+	}
+}
+
+.site-info {
+	background: @ribbon;
+	font-size: 0.5em;
+	color: @text-colour;
+	padding: 1em;
+	p {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		a:link, a:visited {
+			color: @link-colour;
+			text-decoration: none;
+			border-bottom: 2px solid @link-colour;
+		}
+	}
+	ul {
+		list-style-type: none;
+		margin: 0;
+		float: right;
+		display: inline;
+		li {
+			display: inline-block;
+			&:not(:last-child)::after {
+				content: " | ";
+			}
+		}
+	}
+}
+
+// WooCommerce specific
+
+
+.woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt {
+	background: @button-colour;
+	border-color: @button-colour;
+	color: @button-text-colour;
+}
+
+.woocommerce, .woocommerce-page {
+	a {
+		border: none;
+	}
+	div.product p.price {
+		color: @price-colour;
+	}
+
+	#payment {
+		background: none;
+
+		div.form-row {
+			border: none;
+		}
+	}
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea, .woocommerce-page form .form-row input.input-text, .woocommerce-page form .form-row textarea {
+	border: none;
+	border-bottom: 2px solid @border-colour;
+	border-radius: 0;
+	padding: 0.25em;
+	background: @forms-background;
+}
+
+.woocommerce form .form-row .required, .woocommerce-page form .form-row .required {
+	color: @required;
+}
+
+.product.woocommerce.add_to_cart_inline {
+	border: none;
+}

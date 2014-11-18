@@ -28,6 +28,9 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
+			<div class="headertitlescontainer">
+				<div class="headertitles"></div>
+			</div>		
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="season"><?php bloginfo( 'description' ); ?></h2>
 			<h3 class="with-who">with <span>ROBERT OWEN BROWN</span><br> and friends</h3>

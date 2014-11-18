@@ -100,24 +100,31 @@ td {
 html {
   font-size: 62.5%;
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+
   overflow-y: scroll;
   /* Keeps page centered in all browsers regardless of content height */
+
   -webkit-text-size-adjust: 100%;
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+
   box-sizing: border-box;
   /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+
 }
 *,
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+
   box-sizing: inherit;
 }
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
+
 }
 article,
 aside,
@@ -137,6 +144,7 @@ ul {
 }
 table {
   /* tables still need 'cellspacing="0"' in the markup */
+
   border-collapse: separate;
   border-spacing: 0;
 }
@@ -289,8 +297,10 @@ dd {
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
+
   max-width: 100%;
   /* Adhere to container width. */
+
 }
 figure {
   margin: 0;
@@ -311,10 +321,13 @@ select,
 textarea {
   font-size: 100%;
   /* Corrects font size not being inherited in all browsers */
+
   margin: 0;
   /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+
   vertical-align: baseline;
   /* Improves appearance and consistency in all browsers */
+
 }
 button,
 input[type="button"],
@@ -328,8 +341,10 @@ input[type="submit"] {
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
+
   -webkit-appearance: button;
   /* Corrects inability to style clickable 'input' types in iOS */
+
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1;
@@ -358,14 +373,17 @@ input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
   /* Addresses excess padding in IE8/9 */
+
 }
 input[type="search"] {
   -webkit-appearance: textfield;
   /* Addresses appearance set to searchfield in S5, Chrome */
+
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration {
   /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+
   -webkit-appearance: none;
 }
 input[type="text"],
@@ -396,9 +414,11 @@ input[type="search"] {
 textarea {
   overflow: auto;
   /* Removes default vertical scrollbar in IE6/7/8/9 */
+
   padding-left: 3px;
   vertical-align: top;
   /* Improves readability and alignment in all browsers */
+
   width: 100%;
 }
 /*--------------------------------------------------------------
@@ -522,6 +542,7 @@ a:active {
   width: auto;
   z-index: 100000;
   /* Above WP toolbar */
+
 }
 /*--------------------------------------------------------------
 7.0 Alignments
@@ -633,6 +654,7 @@ a:active {
 .infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
+
   display: none;
 }
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
@@ -712,26 +734,33 @@ object {
 .gallery-caption {
   display: block;
 }
+@font-face {
+  font-family: 'esmeralda_proregular';
+  src: url('fonts/esmeralda_pro-webfont.eot');
+  src: url('fonts/esmeralda_pro-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/esmeralda_pro-webfont.woff2') format('woff2'), url('fonts/esmeralda_pro-webfont.woff') format('woff'), url('fonts/esmeralda_pro-webfont.ttf') format('truetype'), url('fonts/esmeralda_pro-webfont.svg#esmeralda_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: EsmeraldaPro, serif;
+  font-family: esmeralda_proregular, serif;
   font-weight: 100;
   letter-spacing: 0.0625em;
-  background: rgba(251, 230, 200, 0.25);
-  color: #fefcf8;
+  background: #c7bcae;
+  color: #dcd5cc;
 }
 h1,
 h2,
 h3,
 h4 {
-  font-family: EsmeraldaPro, serif;
-  color: #fefcf8;
+  font-family: esmeralda_proregular, serif;
+  color: #dcd5cc;
   text-align: center;
 }
 h1 a,
 h2 a,
 h3 a,
 h4 a {
-  color: #fefcf8;
+  color: #dcd5cc;
   border: none;
 }
 h1 {
@@ -748,10 +777,13 @@ h4 {
 }
 .site-branding {
   padding: 2em 0;
-  background: #1b0201;
+  background: url('img/woodtexture.jpg') center top;
+  background-color: #1b0201;
+  background-position: cover;
   font-weight: bold;
   text-align: center;
-  border-bottom: 0.3125em solid #f8471f;
+  border-bottom: 4px solid #f8471f;
+  height: 200px;
 }
 .site-branding h2 {
   color: #f8471f;
@@ -763,14 +795,33 @@ h4 {
   line-height: 2.5;
 }
 .site-branding h3 span {
-  color: #fbe6c8;
+  color: #c7bcae;
   font-size: 1.728rem;
   margin: 0 1em;
+}
+.site-branding h1,
+.site-branding h2,
+.site-branding h3,
+.site-branding h3 span {
+  position: relative;
+  left: -5000px;
+}
+.site-branding .headertitlescontainer {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+}
+.site-branding .headertitlescontainer .headertitles {
+  margin: 0 auto;
+  background: url('img/headertitles.gif') center top no-repeat;
+  background-size: 100% auto;
+  width: 90%;
+  height: 257px;
 }
 .site-branding a:link,
 .site-branding a:visited {
   text-decoration: none;
-  color: #fefcf8;
+  color: #dcd5cc;
   border: none;
 }
 p {
@@ -786,7 +837,7 @@ a:visited {
 }
 #home-page {
   background: #1b0201;
-  border-bottom: 0.3125em solid #f8d098;
+  border-bottom: 0.3125em solid #b2a390;
 }
 #home-page header {
   display: none;
@@ -794,12 +845,29 @@ a:visited {
 #home-page .entry-content {
   margin: 0;
   padding-bottom: 1em;
+  background: url('img/woodtexture.jpg') center top;
+  background-color: #1b0201;
+  background-position: cover;
 }
 #home-page .entry-content h1 {
   margin: 1em;
+  margin-bottom: 1.6em;
   line-height: 1.75;
   font-weight: 100;
   letter-spacing: 0.030135005em;
+  background: url('img/ribbon1.gif') center bottom no-repeat;
+  padding-bottom: 40px;
+}
+#home-page .entry-content p img {
+  width: 100%;
+  border-bottom: 4px solid #f8471f;
+}
+#home-page .entry-content p:first-child {
+  padding-bottom: 0px;
+}
+#home-page .entry-content p {
+  font-size: 1.4em;
+  line-height: 2.2;
 }
 #home-page .entry-content #photo-rob p,
 #home-page .entry-content #mouthwatering-creations p {
@@ -818,21 +886,40 @@ a:visited {
   margin: 0 1em;
 }
 #home-page blockquote {
-  color: #fbe6c8;
+  background: url('img/raynorquote.gif') right top no-repeat;
+  background-size: 100%;
+  color: #c7bcae;
 }
-#robs-friends,
-#order-yours-today {
+#robs-friends {
   color: #5b2920;
-  border-bottom: 0.3125em solid #f8d098;
+  border-bottom: 0.3125em solid #b2a390;
   margin: 0;
 }
-#robs-friends h1,
+#robs-friends h1 {
+  color: #5b2920;
+  background: url('img/robsfriends.png') center center no-repeat;
+  text-indent: -5000px;
+  height: 200px;
+}
+#order-yours-today {
+  color: #5b2920;
+  border-bottom: 0.3125em solid #b2a390;
+  margin: 0;
+}
 #order-yours-today h1 {
   color: #5b2920;
+  background: url('img/ordertoday.png') center center no-repeat;
+  text-indent: -5000px;
+  height: 200px;
 }
 #whats-in-the-box {
   background: #1b0201;
   border-bottom: 0.3125em solid #f8471f;
+}
+#whats-in-the-box h1 {
+  background: url('img/inthebox.png') center center no-repeat;
+  text-indent: -5000px;
+  height: 200px;
 }
 #whats-in-the-box ul li strong {
   font-weight: 900;
@@ -841,7 +928,7 @@ a:visited {
 .site-info {
   background: #f8471f;
   font-size: 0.5em;
-  color: #fefcf8;
+  color: #dcd5cc;
   padding: 1em;
 }
 .site-info p {
@@ -879,7 +966,7 @@ a:visited {
 .woocommerce-page input.button.alt {
   background: #5b2920;
   border-color: #5b2920;
-  color: #fbe6c8;
+  color: #c7bcae;
 }
 .woocommerce a,
 .woocommerce-page a {
@@ -905,7 +992,7 @@ a:visited {
   border-bottom: 2px solid rgba(91, 41, 32, 0.5);
   border-radius: 0;
   padding: 0.25em;
-  background: #fefcf8;
+  background: #dcd5cc;
 }
 .woocommerce form .form-row .required,
 .woocommerce-page form .form-row .required {
@@ -927,6 +1014,15 @@ a:visited {
   h4 {
     font-size: 1.25em;
   }
+  .site-branding {
+    height: 200px;
+  }
+  .site-branding .headertitlescontainer .headertitles {
+    margin: 0 auto;
+    background: url('img/headertitles.gif') center top no-repeat;
+    background-size: 90% auto;
+    height: 257px;
+  }
 }
 @media only screen and (min-width: 600px) {
   .main-navigation {
@@ -945,6 +1041,17 @@ a:visited {
   .main-navigation .menu-item a:visited {
     padding: 1em;
   }
+  .site-branding {
+    height: 350px;
+  }
+  .site-branding .headertitlescontainer .headertitles {
+    margin: 0 auto;
+    background: url('img/headertitles.gif') center 20px no-repeat;
+    background-size: 90% auto;
+    width: 100%;
+    max-width: 772px;
+    height: 257px;
+  }
   .woocommerce #content input.button.alt:hover,
   .woocommerce #respond input#submit.alt:hover,
   .woocommerce a.button.alt:hover,
@@ -957,7 +1064,7 @@ a:visited {
   .woocommerce-page input.button.alt:hover {
     background: #f8471f;
     border-color: #f8471f;
-    color: #fefcf8;
+    color: #dcd5cc;
   }
   #home-page .entry-content #photo-rob p,
   #home-page .entry-content #mouthwatering-creations p {
@@ -968,6 +1075,10 @@ a:visited {
     float: right;
     border: none;
     border: 0.625em solid #ffffff;
+  }
+  #home-page .entry-content #photo-rob p img.raynorquote,
+  #home-page .entry-content #mouthwatering-creations p img.raynorquote {
+    border: none;
   }
   #home-page .entry-content #photo-rob p cite,
   #home-page .entry-content #mouthwatering-creations p cite {

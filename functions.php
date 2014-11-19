@@ -182,3 +182,54 @@ function my_template_redirect()
         exit;
     }
 }
+
+/**
+ * WooCommerce add gift fields to the checkout
+ */
+
+add_action( 'woocommerce_before_checkout_form', 'gift_options' );
+ 
+function gift_options( $checkout ) {
+ 
+    echo '<div id="gift_options"><h2>' . __('Gift options') . '</h2>';
+
+    woocommerce_form_field('is_gift', array (
+    	'type'			=> 'checkbox',
+    	'class'			=> array('is-gift-checkbox'),
+    	'label'			=> __('This is a gift:'),
+    	), $checkout->get_value( 'is_gift' ));
+ 
+    woocommerce_form_field( 'gift_message', array(
+        'type'          => 'textarea',
+        'class'         => array('gift-message form-row-wide'),
+        'label'         => __("Message you would like including with your gift:" ),
+        'placeholder'   => __('Your message here'),
+        ), $checkout->get_value( 'gift_message' ));
+ 
+    echo '</div>';
+ 
+}
+
+/**
+ * Update the order meta with field value
+ */
+add_action( 'woocommerce_checkout_update_order_meta', 'gift_options_update_order_meta' );
+ 
+function gift_options_update_order_meta( $order_id ) {
+    if ( ! empty( $_POST['is_gift'] ) ) {
+        update_post_meta( $order_id, 'This is a gift', sesc_attr($_POST['if_gift'] ) );
+    }
+    if ( ! empty( $_POST['gift_message'] ) ) {
+    	update_post_meta( $order_id, 'Gift Message', sanitize_text_field( $_POST['gift_message'] ) );
+    }
+}
+
+/**
+ * Display field value on the order edit page
+ */
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'gift_options_display_admin_order_meta', 10, 1 );
+ 
+function gift_options_display_admin_order_meta($order){
+    echo '<p><strong>'.__('Is this a gift?').':</strong> ' . get_post_meta( $order->id, 'Is this a gift?', true ) . '</p>';
+    echo '<p><strong>'.__('Gift message:').':</strong> ' . get_post_meta( $order->id, 'Gift message', true ) . '</p>';
+}

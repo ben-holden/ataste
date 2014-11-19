@@ -13,19 +13,19 @@
 	    $('.tabs').show();
 	}
 
-	// WooCommerce: hide the ship to a different address inputs unless the box is ticked
+	//WooCommerce: hide the gift message unless the box is ticked
 
-	if ($(".shipping_address").checked) {
-		$(this).show();
+	if ($("#is_gift").is(":checked")) {
+		$("#gift_message_field").show();
 	} else {
-		$(this).hide();
+		$("#gift_message_field").hide();
 	}
 
-	$("#ship-to-different-address-checkbox").change(function() {
+	$("#is_gift").change(function() {
 	    if(this.checked) {
-	        $(".shipping_address").show();
+	        $("#gift_message_field").slideDown();
 	    } else {
-	        $(".shipping_address").hide();
+	        $("#gift_message_field").slideUp();
 	    }
 	});
 

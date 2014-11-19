@@ -14,9 +14,9 @@
 		<div class="site-info">
 			<p>&copy; <?php echo date("Y") ?> A Taste of the Season. All rights reserved.</p>
 			<ul>
-				<li>returns policy</li>
-				<li>privacy policy</li>
-				<li>contact</li>
+				<li><a href="/returns-policy">returns policy</a></li>
+				<li><a href="/privacy-policy">privacy policy</a></li>
+				<li><a href="/contact">contact</a></li>
 			</ul>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

@@ -75,11 +75,28 @@ h4 {font-size: 1.2em;}
 		width: 100%;
 		position: absolute;
 		.headertitles {
+			position: relative;
 			margin: 0 auto;
 			background: url('img/headertitles.gif') center top no-repeat;
 			background-size: 100% auto;
 			width: 90%;
 			height: 257px;
+			.buynowbutton {
+				background: url('img/buynowcircle.png') no-repeat;
+				width: 172px;
+				height: 172px;
+				position: absolute;
+				top: 230px;
+				left: -80px;
+			}
+			.finefoods {
+				background: url('img/finefood.png') no-repeat;
+				width: 149px;
+				height: 149px;
+				position: absolute;
+				top: 100px;
+				right: -80px;
+			}
 		}
 	}
 
@@ -139,7 +156,18 @@ a:link, a:visited {
 			line-height: 2.2;
 		}
 
+		.raynerquote {
+			display: inline;
+			float: right;
+			background: url('img/raynorquote.gif') center center no-repeat;
+			width: 619px;
+			height: 267px;
+			margin-right: 60px;
+			margin-top: 60px;
+		}
+
 		#photo-rob, #mouthwatering-creations {
+			
 			p {
 				max-width: 100%;
 				padding: 0 1em;
@@ -158,12 +186,6 @@ a:link, a:visited {
 		}
 		
 	}
-
-	blockquote {
-		background: url('img/raynorquote.gif') right top no-repeat;
-		background-size: 100%;
-		color: @cheese;
-	}
 }
 
 #robs-friends  {
@@ -173,33 +195,53 @@ a:link, a:visited {
 		text-indent: -5000px;
 		height: 200px;
 	}
-	color: @fruitcake;
-	border-bottom: 0.3125em solid darken(@cheese, 10%);
-	margin: 0;
-}
-
-#order-yours-today {
-	h1 {
-		color: @fruitcake;
-		background: url('img/ordertoday.png') center center no-repeat;
-		text-indent: -5000px;
-		height: 200px;
+	p {
+		margin-bottom: 0px;
 	}
 	color: @fruitcake;
 	border-bottom: 0.3125em solid darken(@cheese, 10%);
-	margin: 0;
+	margin: 0 60px;
+	.friendslogos {
+		margin: 0 auto;
+		background: url('img/logos.jpg') center center no-repeat;
+		background-size: 100%;
+		max-width: 976px;
+		margin-bottom: 60px;
+		height: 363px;
+	}
 }
 
 #whats-in-the-box {
+	background: url('img/woodtexture.jpg') center top;
+	background-color: @coffee;
+	background-position: cover;
+	padding: 0 60px;
+	p {
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	.bookoffer {
+		background: url('img/cooklikerob.gif') center center no-repeat;
+		background-size: 100%;
+		width: 348px;
+		height: 542px;
+		margin-bottom: 40px;
+	}
 	h1 {
-		background: url('img/inthebox.png') center center no-repeat;
+		background: url('img/inthebox.gif') center center no-repeat;
 		text-indent: -5000px;
 		height: 200px;
 	}
-	background: @coffee;
 	border-bottom: 0.3125em solid @ribbon;
 	ul {
+		margin-bottom: 60px;
 		li {
+			background: url('img/feather.png') left 10px no-repeat;
+			padding-left: 45px;
+			font-size: 18px;
+			line-height: 1.5;
+			list-style: none;
+			margin-bottom: 20px;
 			strong {
 				font-weight: 900;
 				color: @ribbon;
@@ -208,9 +250,68 @@ a:link, a:visited {
 	}
 }
 
+#order-yours-today {
+	.orderwrap {
+		background-color: #544F49;
+	}
+	.orderleft{
+		width: 50%;
+		float: left;
+	}
+	.orderright {
+		width: 50%;
+		float: right;
+		padding: 30px 30px 0 30px;
+		font-size: 16px;
+	}
+	.pricecircle {
+		background: url('img/pricecircle.png') center center no-repeat;
+		width: 179px;
+		height: 179px;
+		float: right;
+	}
+	p {
+		padding: 0px;
+		margin: 0px;
+	}
+	h1 {
+		color: @fruitcake;
+		background: url('img/ordertoday.png') center center no-repeat;
+		text-indent: -5000px;
+		height: 200px;
+	}
+	.infoctawrap {
+		margin: 30px;
+		.cardlogos {
+			color: @coffee;
+			font-size: 20px;
+			h4 {
+				color: @coffee;
+				text-align: left;
+				font-size: 14px;
+				margin-top: 20px;
+			}
+			.cardlogoimg {
+				background: url('img/worldpaylogos.jpg') center center no-repeat;
+				width: 484px;
+				height: 63px;
+			}
+			a.button.add_to_cart_button.product_type_simple {
+				background-color: @ribbon!important;
+			}
+		}
+		margin-bottom: 40px;
+
+	}
+	color: @cheese;
+	border-bottom: 0.3125em solid darken(@cheese, 10%);
+	margin: 0;
+}
+
+
 .site-info {
 	background: @ribbon;
-	font-size: 0.5em;
+	font-size: 0.8em;
 	color: @text-colour;
 	padding: 1em;
 	p {

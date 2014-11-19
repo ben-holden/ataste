@@ -29,7 +29,10 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div class="headertitlescontainer">
-				<div class="headertitles"></div>
+				<div class="headertitles">
+					<a href="#" class="buynowbutton"></a>
+					<div class="finefoods"></div>
+				</div>
 			</div>		
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="season"><?php bloginfo( 'description' ); ?></h2>

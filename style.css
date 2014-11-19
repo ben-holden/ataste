@@ -782,15 +782,15 @@ h4 {
   background-position: cover;
   font-weight: bold;
   text-align: center;
-  border-bottom: 4px solid #f8471f;
+  border-bottom: 4px solid #c73e01;
   height: 200px;
 }
 .site-branding h2 {
-  color: #f8471f;
+  color: #c73e01;
 }
 .site-branding h3 {
   padding: 1em 0;
-  color: #f8471f;
+  color: #c73e01;
   font-size: 0.75em;
   line-height: 2.5;
 }
@@ -821,19 +821,21 @@ h4 {
 }
 .site-branding .headertitlescontainer .headertitles .buynowbutton {
   background: url('img/buynowcircle.png') no-repeat;
-  width: 172px;
-  height: 172px;
+  background-size: 100%;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  top: 230px;
-  left: -80px;
+  top: 110px;
+  left: 20px;
 }
 .site-branding .headertitlescontainer .headertitles .finefoods {
   background: url('img/finefood.png') no-repeat;
-  width: 149px;
-  height: 149px;
+  background-size: 100%;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  top: 100px;
-  right: -80px;
+  top: 60px;
+  right: -20px;
 }
 .site-branding a:link,
 .site-branding a:visited {
@@ -848,8 +850,8 @@ p {
 }
 a:link,
 a:visited {
-  color: #f8471f;
-  border-bottom: 2px solid #f8471f;
+  color: #c73e01;
+  border-bottom: 2px solid #c73e01;
   text-decoration: none;
 }
 #home-page {
@@ -877,7 +879,7 @@ a:visited {
 }
 #home-page .entry-content p img {
   width: 100%;
-  border-bottom: 4px solid #f8471f;
+  border-bottom: 4px solid #c73e01;
 }
 #home-page .entry-content p:first-child {
   padding-bottom: 0px;
@@ -904,7 +906,7 @@ a:visited {
 #home-page .entry-content #mouthwatering-creations p img.alignnone {
   width: 100%;
   margin: 0 auto;
-  border-bottom: 0.3125em solid #f8471f;
+  border-bottom: 0.3125em solid #c73e01;
 }
 #home-page .entry-content #photo-rob p img.alignright,
 #home-page .entry-content #mouthwatering-creations p img.alignright {
@@ -938,7 +940,7 @@ a:visited {
   background-color: #1b0201;
   background-position: cover;
   padding: 0 60px;
-  border-bottom: 0.3125em solid #f8471f;
+  border-bottom: 0.3125em solid #c73e01;
 }
 #whats-in-the-box p {
   padding-bottom: 0px;
@@ -969,7 +971,7 @@ a:visited {
 }
 #whats-in-the-box ul li strong {
   font-weight: 900;
-  color: #f8471f;
+  color: #c73e01;
 }
 #order-yours-today {
   color: #c7bcae;
@@ -996,6 +998,7 @@ a:visited {
   float: right;
 }
 #order-yours-today p {
+  font-size: 18px;
   padding: 0px;
   margin: 0px;
 }
@@ -1021,14 +1024,31 @@ a:visited {
 }
 #order-yours-today .infoctawrap .cardlogos .cardlogoimg {
   background: url('img/worldpaylogos.jpg') center center no-repeat;
-  width: 484px;
+  width: 100%;
+  background-size: 100%;
+  max-width: 484px;
   height: 63px;
 }
-#order-yours-today .infoctawrap .cardlogos a.button.add_to_cart_button.product_type_simple {
-  background-color: #f8471f !important;
+#order-yours-today .infoctawrap .ctaright {
+  width: 50%;
+  float: right;
+  padding-left: 30px;
+}
+#order-yours-today .infoctawrap .ctaright .woocommerce a.add_to_cart_button {
+  background: #c73e01;
+  font-size: 25px;
+  text-shadow: none;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  box-shadow: 2px 2px 0px #544F49;
+  border: none;
+  border-radius: 8px;
+  font-weight: normal;
 }
 .site-info {
-  background: #f8471f;
+  background: #c73e01;
   font-size: 0.8em;
   color: #dcd5cc;
   padding: 1em;
@@ -1040,18 +1060,22 @@ a:visited {
 }
 .site-info p a:link,
 .site-info p a:visited {
-  color: #f8471f;
+  color: #c7bcae;
   text-decoration: none;
-  border-bottom: 2px solid #f8471f;
+  border-bottom: 2px solid #c73e01;
 }
 .site-info ul {
   list-style-type: none;
   margin: 0;
   float: right;
   display: inline;
+  margin-top: 10px;
 }
 .site-info ul li {
   display: inline-block;
+}
+.site-info ul li a {
+  color: #7d0905;
 }
 .site-info ul li:not(:last-child)::after {
   content: " | ";
@@ -1098,10 +1122,140 @@ a:visited {
 }
 .woocommerce form .form-row .required,
 .woocommerce-page form .form-row .required {
-  color: #f8471f;
+  color: #c73e01;
 }
 .product.woocommerce.add_to_cart_inline {
   border: none;
+}
+#checkout {
+  margin: 30px;
+  color: #1b0201;
+}
+#checkout h1,
+#checkout h2,
+#checkout h3 {
+  color: #c73e01;
+}
+#checkout table input.checkout-button {
+  background: #c73e01;
+  border: none;
+}
+#checkout table th {
+  background: #B1A598;
+}
+#checkout table tr {
+  background: #BDB1A2;
+}
+#checkout .cart-collaterals {
+  width: 60%;
+  float: right;
+  margin-bottom: 40px;
+}
+#checkout .cart-collaterals .cart_totals {
+  width: 100%;
+}
+#checkout .cart-collaterals .cart_totals h2 {
+  padding-bottom: 10px;
+  text-align: left;
+}
+#checkout .cart-collaterals .cart_totals table th,
+#checkout .cart-collaterals .cart_totals table td {
+  padding: 10px;
+  border-color: #A99F91;
+}
+#checkout #gift_options {
+  width: 40%;
+  float: left;
+}
+#checkout #gift_options h2 {
+  text-align: left;
+}
+#checkout #gift_options p {
+  font-size: 14px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-right: 20px;
+  line-height: 2;
+}
+#checkout #gift_options textarea {
+  margin-top: 10px;
+}
+#checkout #customer_details h3 {
+  text-align: left;
+  font-size: 1.953em;
+}
+#checkout #customer_details label {
+  color: #544F49;
+  font-size: 16px;
+}
+#checkout #customer_details input,
+#checkout #customer_details textarea {
+  padding: 7px;
+  font-family: esmeralda_proregular, serif;
+  color: #544F49;
+  font-size: 16px;
+}
+#checkout #customer_details ::-webkit-input-placeholder {
+  color: #B1A598;
+  font-size: 16px;
+}
+#checkout #customer_details :-moz-placeholder {
+  /* Firefox 18- */
+
+  color: #B1A598;
+  font-size: 16px;
+}
+#checkout #customer_details ::-moz-placeholder {
+  /* Firefox 19+ */
+
+  color: #B1A598;
+  font-size: 16px;
+}
+#checkout #customer_details :-ms-input-placeholder {
+  color: #B1A598;
+  font-size: 16px;
+}
+#checkout h3#order_review_heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 1.953em;
+}
+#checkout ul.woocommerce-error {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+#checkout ul.woocommerce-error li {
+  width: 100%;
+}
+#checkout #order_review tr.cart_item {
+  font-size: 26px;
+}
+#checkout #order_review tr.order-total span.amount {
+  font-size: 20px;
+}
+#checkout #payment .payment_box {
+  padding: 3px;
+  background: #B1A598;
+}
+#checkout #payment .payment_box p {
+  font-size: 12px;
+  text-shadow: none;
+  margin: 2px;
+  padding: 0px;
+}
+#checkout #payment #place_order {
+  background: #c73e01;
+  font-size: 25px;
+  text-shadow: none;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 2px 2px 0px #544F49;
+  border: none;
+  border-radius: 8px;
+  font-weight: normal;
 }
 @media only screen and (min-width: 400px) {
   h1 {
@@ -1124,6 +1278,14 @@ a:visited {
     background: url('img/headertitles.gif') center top no-repeat;
     background-size: 90% auto;
     height: 257px;
+  }
+  .site-branding .headertitlescontainer .headertitles .buynowbutton {
+    top: 120px;
+    left: 20px;
+  }
+  .site-branding .headertitlescontainer .headertitles .finefoods {
+    top: 60px;
+    right: -20px;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -1154,6 +1316,22 @@ a:visited {
     max-width: 772px;
     height: 257px;
   }
+  .site-branding .headertitlescontainer .headertitles .buynowbutton {
+    background: url('img/buynowcircle.png') no-repeat;
+    width: 172px;
+    height: 172px;
+    position: absolute;
+    top: 230px;
+    left: -10px;
+  }
+  .site-branding .headertitlescontainer .headertitles .finefoods {
+    background: url('img/finefood.png') no-repeat;
+    width: 149px;
+    height: 149px;
+    position: absolute;
+    top: 100px;
+    right: -10px;
+  }
   .woocommerce #content input.button.alt:hover,
   .woocommerce #respond input#submit.alt:hover,
   .woocommerce a.button.alt:hover,
@@ -1164,8 +1342,8 @@ a:visited {
   .woocommerce-page a.button.alt:hover,
   .woocommerce-page button.button.alt:hover,
   .woocommerce-page input.button.alt:hover {
-    background: #f8471f;
-    border-color: #f8471f;
+    background: #c73e01;
+    border-color: #c73e01;
     color: #dcd5cc;
   }
   #home-page .entry-content #photo-rob p,

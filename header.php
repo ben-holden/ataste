@@ -29,11 +29,22 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div class="headertitlescontainer">
+			
+			<?php if ( is_front_page() ) :
+				?>
 				<div class="headertitles">
-					<a href="#" class="buynowbutton"></a>
+					<a href="#order-yours-today" class="buynowbutton"></a>
 					<div class="finefoods"></div>
 				</div>
+			
+			<?php else :
+			?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="headertitles">
+					<div class="finefoods"></div>
+				</div></a>
+			<?php endif; ?>
 			</div>		
+			
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="season"><?php bloginfo( 'description' ); ?></h2>
 			<h3 class="with-who">with <span>ROBERT OWEN BROWN</span><br> and friends</h3>

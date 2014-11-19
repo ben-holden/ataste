@@ -1080,6 +1080,29 @@ a:visited {
 .site-info ul li:not(:last-child)::after {
   content: " | ";
 }
+.page-template-default .site-content {
+  padding: 30px 60px;
+  color: #1b0201;
+}
+.page-template-default .site-content h1,
+.page-template-default .site-content h2,
+.page-template-default .site-content h3,
+.page-template-default .site-content h4 {
+  color: #1b0201;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.page-template-default .site-content ol {
+  margin: 60px ;
+}
+.page-template-default .site-content ol li {
+  font-size: 20px;
+  color: #6B595C;
+  margin-bottom: 20px;
+}
+.page-template-default #comments {
+  display: none;
+}
 .woocommerce #content input.button.alt,
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,

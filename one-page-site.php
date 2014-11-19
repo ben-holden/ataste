@@ -10,7 +10,7 @@ get_header(); ?>
 
 			<?php
 
-				$exclude = '44, 47, 45, 46';
+				$exclude = '18,19,20,21';
 
 				$args = array(
 					'post_type' => 'page',

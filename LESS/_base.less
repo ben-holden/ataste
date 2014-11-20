@@ -354,6 +354,7 @@ a:link, a:visited {
 			}
 			display: inline-block;
 			&:not(:last-child)::after {
+				color: lighten(@coffee, 20%);
 				content: " | ";
 			}
 		}
@@ -366,9 +367,9 @@ a:link, a:visited {
 .page-template-default {
 	.site-content {
 		padding: 30px 60px;
-		color: @coffee;
+		color: @legalpagescolour;
 		h1, h2, h3, h4 {
-			color: @coffee;
+			color: @ribbon;
 			text-align: left;
 			margin-bottom: 20px;
 		}
@@ -376,16 +377,18 @@ a:link, a:visited {
 			
 		}
 		ol {
-			margin: 60px ;
+			margin: 60px;
 		}
 		ol li {
 			font-size: 20px;
 			color: #6B595C;
 			margin-bottom: 20px;
 		}
-	}
-	#comments {
-		display: none;
+
+		p {
+			margin-bottom: 0;
+		}
+
 	}
 }
 
@@ -394,12 +397,6 @@ a:link, a:visited {
 
 
 // WooCommerce specific
-
-// .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button {
-// 	background: @ribbon;
-// 	text-shadow: none;
-// }
-
 
 .woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt {
 	background: @button-colour;

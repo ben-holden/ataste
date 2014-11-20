@@ -17,6 +17,7 @@
 				<li><a href="/returns-policy">returns policy</a></li>
 				<li><a href="/privacy-policy">privacy policy</a></li>
 				<li><a href="/contact">contact</a></li>
+				<li><a href="/terms-and-conditions">terms and conditions</a></li>
 			</ul>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

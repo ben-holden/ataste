@@ -182,11 +182,6 @@ function my_template_redirect()
         exit;
     }
 }
-/**
- * WooCommerce add related item before cart if it's not already in it
- */
-
-// PUT FUNCTION IN HERE!
 
 /**
  * WooCommerce add gift fields to the checkout

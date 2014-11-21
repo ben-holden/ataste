@@ -443,6 +443,19 @@ a:link, a:visited {
 	border: none;
 }
 
+.woocommerce-page #content input.button {
+	background: @ribbon;
+	font-size: 20px;
+	text-shadow: none;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	box-shadow: 2px 2px 0px #544F49;
+	border: none;
+	border-radius: 8px;
+	font-weight: normal;
+}
+
 
 // Checkout magic
 
@@ -481,6 +494,33 @@ a:link, a:visited {
 				}
 			}
 		}
+	}
+	.cross-sells {
+		.images {
+			img {
+				max-height: 300px;
+				max-width: 300px;
+				margin: 0 auto;
+			}
+		}
+
+		.quantity {
+			margin: 0;
+		}
+
+		.single_add_to_cart_button {
+			background: @ribbon;
+			font-size: 25px;
+			text-shadow: none;
+			padding: 20px;
+			text-align: center;
+			color: white;
+			box-shadow: 2px 2px 0px #544F49;
+			border: none;
+			border-radius: 8px;
+			font-weight: normal;
+		}
+
 	}
 	#gift_options {
 		width: 40%;

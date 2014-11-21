@@ -187,8 +187,6 @@ function my_template_redirect()
  * WooCommerce add gift fields to the checkout
  */
 
-
-
 add_action( 'woocommerce_before_checkout_form', 'gift_options' );
  
 function gift_options( $checkout ) {
@@ -215,6 +213,7 @@ function gift_options( $checkout ) {
 /**
  * Update the order meta with field value - gift data
  */
+
 add_action( 'woocommerce_checkout_update_order_meta', 'gift_options_update_order_meta' );
  
 function gift_options_update_order_meta( $order_id ) {
@@ -282,3 +281,12 @@ add_action('woocommerce_checkout_update_order_meta', 'customer_is_over_18_update
 function customer_is_over_18_update_order_meta( $order_id ) {
     if ($_POST['my_checkbox']) update_post_meta( $order_id, 'Customer over 18:', esc_attr($_POST['my_checkbox']));
 }
+
+//THIS IS THE BIT I'M WORKING ON
+
+remove_action(  'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display'  );
+add_action( 'woocommerce_before_cart_table', 'woocommerce_cross_sell_display' );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );

@@ -1007,6 +1007,15 @@ a:visited {
   max-width: 484px;
   height: 63px;
 }
+#order-yours-today .infoctawrap .cardlogos .age-restrict {
+  background: #c73e01;
+  border-radius: 50%;
+  float: left;
+  min-width: 20px;
+  min-height: 20px;
+  text-align: center;
+  margin-right: 0.5em;
+}
 #order-yours-today .infoctawrap .ctaright {
   width: 50%;
   float: right;

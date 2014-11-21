@@ -182,10 +182,17 @@ function my_template_redirect()
         exit;
     }
 }
+/**
+ * WooCommerce add related item before cart if it's not already in it
+ */
+
+// PUT FUNCTION IN HERE!
 
 /**
  * WooCommerce add gift fields to the checkout
  */
+
+
 
 add_action( 'woocommerce_before_checkout_form', 'gift_options' );
  
@@ -196,7 +203,7 @@ function gift_options( $checkout ) {
     woocommerce_form_field('is_gift', array (
     	'type'			=> 'checkbox',
     	'class'			=> array('is-gift-checkbox'),
-    	'label'			=> __('This is a gift:'),
+    	'label'			=> __('This is a gift'),
     	), $checkout->get_value( 'is_gift' ));
  
     woocommerce_form_field( 'gift_message', array(
@@ -211,7 +218,7 @@ function gift_options( $checkout ) {
 }
 
 /**
- * Update the order meta with field value
+ * Update the order meta with field value - gift data
  */
 add_action( 'woocommerce_checkout_update_order_meta', 'gift_options_update_order_meta' );
  
@@ -225,11 +232,58 @@ function gift_options_update_order_meta( $order_id ) {
 }
 
 /**
- * Display field value on the order edit page
+ * Display field value on the order edit page - gift data
  */
+
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'gift_options_display_admin_order_meta', 10, 1 );
  
 function gift_options_display_admin_order_meta($order){
     echo '<p><strong>'.__('Is this a gift?').':</strong> ' . get_post_meta( $order->id, 'Is this a gift?', true ) . '</p>';
     echo '<p><strong>'.__('Gift message:').':</strong> ' . get_post_meta( $order->id, 'Gift message', true ) . '</p>';
+}
+
+/**
+ * Add over-18 field to the checkout
+ **/
+
+add_action('woocommerce_after_order_notes', 'customer_is_over_18');
+ 
+function customer_is_over_18( $checkout ) {
+
+	global $woocommerce;
+ 
+    echo '<div id="customer_over_18">';
+ 
+    woocommerce_form_field( 'over_18', array(
+        'type'          => 'checkbox',
+        'class'         => array('input-checkbox'),
+        'label'         => __('I confirm that I and the person I am purchasing this for (if relevent) are over 18'),
+        'required'  => true,
+        ), $checkout->get_value( 'over_18' ));
+ 
+    echo '</div>';
+}
+ 
+/**
+ * Process the checkout - over-18
+ **/
+
+add_action('woocommerce_checkout_process', 'customer_is_over_18_checkout_field_process');
+ 
+function customer_is_over_18_checkout_field_process() {
+    global $woocommerce;
+ 
+    // Check if set, if its not set add an error.
+    if (!$_POST['my_checkbox'])
+         $woocommerce->add_error( __('Please confirm you and (if relevent) the person you are purchasing this box for are over 18.') );
+}
+ 
+/**
+ * Update the order meta with field value - over 18
+ **/
+
+add_action('woocommerce_checkout_update_order_meta', 'customer_is_over_18_update_order_meta');
+ 
+function customer_is_over_18_update_order_meta( $order_id ) {
+    if ($_POST['my_checkbox']) update_post_meta( $order_id, 'Customer over 18:', esc_attr($_POST['my_checkbox']));
 }

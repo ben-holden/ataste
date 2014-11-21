@@ -301,6 +301,15 @@ a:link, a:visited {
 				max-width: 484px;
 				height: 63px;
 			}
+			.age-restrict {
+				background: @ribbon;
+				border-radius: 50%;
+				float: left;
+				min-width: 20px;
+				min-height: 20px;
+				text-align: center;
+				margin-right: 0.5em;
+			}
 		}
 		.ctaright {
 			width: 50%;
@@ -354,6 +363,7 @@ a:link, a:visited {
 			}
 			display: inline-block;
 			&:not(:last-child)::after {
+				color: lighten(@coffee, 20%);
 				content: " | ";
 			}
 		}
@@ -366,9 +376,9 @@ a:link, a:visited {
 .page-template-default {
 	.site-content {
 		padding: 30px 60px;
-		color: @coffee;
+		color: @legalpagescolour;
 		h1, h2, h3, h4 {
-			color: @coffee;
+			color: @ribbon;
 			text-align: left;
 			margin-bottom: 20px;
 		}
@@ -376,30 +386,23 @@ a:link, a:visited {
 			
 		}
 		ol {
-			margin: 60px ;
+			margin: 60px;
 		}
 		ol li {
 			font-size: 20px;
 			color: #6B595C;
 			margin-bottom: 20px;
 		}
-	}
-	#comments {
-		display: none;
+
+		p {
+			margin-bottom: 0;
+		}
+
 	}
 }
 
 
-
-
-
 // WooCommerce specific
-
-// .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button {
-// 	background: @ribbon;
-// 	text-shadow: none;
-// }
-
 
 .woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt {
 	background: @button-colour;
@@ -440,6 +443,19 @@ a:link, a:visited {
 	border: none;
 }
 
+.woocommerce-page #content input.button {
+	background: @ribbon;
+	font-size: 20px;
+	text-shadow: none;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	box-shadow: 2px 2px 0px #544F49;
+	border: none;
+	border-radius: 8px;
+	font-weight: normal;
+}
+
 
 // Checkout magic
 
@@ -478,6 +494,33 @@ a:link, a:visited {
 				}
 			}
 		}
+	}
+	.cross-sells {
+		.images {
+			img {
+				max-height: 300px;
+				max-width: 300px;
+				margin: 0 auto;
+			}
+		}
+
+		.quantity {
+			margin: 0;
+		}
+
+		.single_add_to_cart_button {
+			background: @ribbon;
+			font-size: 25px;
+			text-shadow: none;
+			padding: 20px;
+			text-align: center;
+			color: white;
+			box-shadow: 2px 2px 0px #544F49;
+			border: none;
+			border-radius: 8px;
+			font-weight: normal;
+		}
+
 	}
 	#gift_options {
 		width: 40%;

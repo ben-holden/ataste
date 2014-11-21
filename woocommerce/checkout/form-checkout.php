@@ -121,7 +121,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> <input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
+				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 
@@ -193,6 +193,26 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 			</div>
 
 		</div>
+
+		<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
+
+		<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', get_option( 'woocommerce_enable_order_comments', 'yes' ) === 'yes' ) ) : ?>
+
+			<?php if ( ! WC()->cart->needs_shipping() || WC()->cart->ship_to_billing_address_only() ) : ?>
+
+				<h3><?php _e( 'Additional Information', 'woocommerce' ); ?></h3>
+
+			<?php endif; ?>
+
+			<?php foreach ( $checkout->checkout_fields['order'] as $key => $field ) : ?>
+
+				<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+
+			<?php endforeach; ?>
+
+		<?php endif; ?>
+
+	<?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
